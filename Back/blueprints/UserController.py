@@ -13,7 +13,5 @@ def NewUser():
 	try:
 		user = NewUserService(payload)
 		return user.toJSON(), 200
-	except BadUser:
-		return BAD_USER_MESSAGE, 400
 	except ValueError:
 		return INTERNAL_ERROR_MESSAGE + ValueError, 500

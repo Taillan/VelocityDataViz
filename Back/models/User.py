@@ -1,7 +1,6 @@
-
 from typing import List
 
-class Participation():
+class User():
     def __init__(self, username: str, password: str, email: str, id: int=None):
         self.id = id
         self.username = username
