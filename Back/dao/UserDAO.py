@@ -15,7 +15,7 @@ def getUser(id):
     return db_connection(instruction).fetchone()
 
 def getAllUser():
-    instruction = f'SHOW TABLES;'#'select * from Account;'
+    instruction = f'select * from Account;'
     return db_connection(instruction)
 
 def deleteUser(id):

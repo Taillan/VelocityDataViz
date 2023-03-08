@@ -14,7 +14,7 @@ CORS(app)
 
 @app.route('/users', methods=['GET'])
 def GetAllUsers():
-	return json.dumps(GetAllUserService()), 200
+	return GetAllUserService(), 200
 
 if __name__ == "__main__":
 	with app.app_context():

@@ -1,6 +1,6 @@
 
 import mariadb
-from flask import g
+from flask import g, jsonify 
 import sys
 
 def get_db():
@@ -23,11 +23,9 @@ def get_cur():
 
 def db_connection(instruction):
     try:
-        #print(get_cur, file=sys.stderr)
-        print(instruction, file=sys.stderr)
-        sql_result = get_cur().execute(instruction)            
-        get_db().commit()
-        print(sql_result, file=sys.stderr)
-        return sql_result
+        with get_cur() as cursor:
+            cursor.execute(instruction)   
+            get_db().commit()
+            return  jsonify(list(cursor))
     except mariadb.Error as e: 
         print(f"Error: {e}")
