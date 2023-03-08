@@ -34,7 +34,8 @@ def DeleteUserService(id):
 def DeleteAllUsers():
     deleteAllUser()
 
-def UserFromJson(payload):    
+def UserFromJson(payload):
+    #print(payload, file=sys.stderr)
     try:
         username = payload['username']
     except:
@@ -47,7 +48,7 @@ def UserFromJson(payload):
         email = payload['email']
     except:
         return "Missing email field"
-    return user(username, password,email)
+    return User(username, password,email)
 
 def UserFromSQL(payload):
     try:
@@ -66,7 +67,7 @@ def UserFromSQL(payload):
         email = payload[3]
     except:
         return "Missing email"
-    return user(username, password,email,id)
+    return User(username, password,email,id)
 
 def AllUserFromSQL(payload):
     users = []

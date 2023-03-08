@@ -2,7 +2,7 @@ from utils.db_connect import db_connection,get_cur
 import sys
 
 def saveUser(User):
-    instruction = f'insert into Account (username,password,email) values ("{User.username}","{User.password}","{User.email}")'
+    instruction = f'INSERT INTO Account (username,password,email) values ("{User.username}","{User.password}","{User.email}");'
     db_connection(instruction)
     return get_cur().lastrowid
 

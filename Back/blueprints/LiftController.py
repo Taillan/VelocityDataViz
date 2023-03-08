@@ -1,15 +1,16 @@
 from flask import Blueprint
 from flask import request
 from utils.errors import *
-from services.UserServices import *
+from services.LiftServices import *
 
-user_blueprint = Blueprint('user', __name__)
+lift_blueprint = Blueprint('lift', __name__)
 
-@user_blueprint.route('/user', methods=['POST'])
+@lift_blueprint.route('/lift', methods=['POST'])
 def NewUser():
+
 	payload = request.get_json()
 	try:
-		user = NewUserService(payload)
-		return user.toJSON(), 200
+		lift = NewLiftService(payload)
+		return lift.toJSON(), 200
 	except ValueError:
 		return INTERNAL_ERROR_MESSAGE + ValueError, 500

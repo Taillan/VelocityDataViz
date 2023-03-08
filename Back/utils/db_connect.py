@@ -12,7 +12,6 @@ def get_db():
             user='root',
             password='rootroot',
             database='VelocityAppDB')
-        print(con, file=sys.stderr)
     return con
 
 def get_cur():
@@ -23,9 +22,10 @@ def get_cur():
 
 def db_connection(instruction):
     try:
-        with get_cur() as cursor:
+        with get_db() as db:
+            cursor = db.cursor()
             cursor.execute(instruction)   
-            get_db().commit()
-            return  jsonify(list(cursor))
+            db.commit()
+            return  cursor.fetchall()
     except mariadb.Error as e: 
-        print(f"Error: {e}")
+        print(f"Error db_connection : {e}")
