@@ -9,6 +9,28 @@
 			"name": "User",
 			"item": [
 				{
+					"name": "Add User",
+					"id": "485460e5-e130-4ccc-8597-00f0cb79e785",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"Jumpiste\",\n    \"password\" : \"test\",\n    \"email\" : \"xvdssdv\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://{{URL}}:{{Backend_port}}/user"
+					},
+					"response": []
+				},
+				{
 					"name": "Get All Users",
 					"event": [
 						{
@@ -71,28 +93,6 @@
 					"response": []
 				},
 				{
-					"name": "Add User",
-					"id": "485460e5-e130-4ccc-8597-00f0cb79e785",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\" : \"Jumpiste\",\n    \"password\" : \"test\",\n    \"email\" : \"xvdssdv\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://{{URL}}:{{Backend_port}}/user"
-					},
-					"response": []
-				},
-				{
 					"name": "Del user",
 					"id": "bada3b1b-a177-41af-8025-5c6701b3ced2",
 					"protocolProfileBehavior": {
@@ -135,6 +135,57 @@
 				},
 				{
 					"name": "Get All Lifts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ade9cab5-e1ac-4594-9cdb-f22c137fe317",
+								"exec": [
+									"pm.test(\"Request respond ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Request respond json\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									"",
+									"User = pm.response.json()",
+									"",
+									"const schema = {",
+									"    \"type\": \"array\",",
+									"    \"items\":",
+									"    [{",
+									"        type: \"object\",",
+									"        \"properties\":{",
+									"            \"AvgVelocity\": {\"type\": \"string\"},",
+									"            \"DurationOfRep\": {\"type\": \"float\"},",
+									"            \"Exercise\": {\"type\": \"string\"},",
+									"            \"Metric\": {\"type\": \"integer\"},",
+									"            \"PeakVelocity\": {\"type\": \"integer\"},",
+									"            \"RPE\": {\"type\": \"integer\"},",
+									"            \"Rep\": {\"type\": \"float\"},",
+									"            \"RestTime\": {\"type\": \"string\"},",
+									"            \"RoM\": {\"type\": \"float\"},",
+									"            \"Set\": {\"type\": \"integer\"},",
+									"            \"Tags\": {\"type\": \"string\"},",
+									"            \"Weight\": {\"type\": \"integer\"},",
+									"            \"WorkoutStartTime\": {\"type\": \"string\"},",
+									"            \"email\": {\"type\": \"integer\"},",
+									"            \"id\": {\"type\": \"integer\"},",
+									"            }",
+									"    }]",
+									"}",
+									"pm.test(\"User well format\", function () {",
+									"     pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "600faf4a-60e8-4768-85e7-4030ba3ea55f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
