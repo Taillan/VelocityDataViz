@@ -42,7 +42,7 @@
 									"    pm.expect(User.email);",
 									"    pm.expect(User.password);",
 									"    pm.expect(User.username);",
-									"    pm.expect(User);",
+									"    pm.expect(User.name);",
 									"});",
 									""
 								],
