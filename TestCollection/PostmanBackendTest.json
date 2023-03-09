@@ -174,7 +174,7 @@
 									"            \"Tags\": {\"type\": \"string\"},",
 									"            \"Weight\": {\"type\": \"integer\"},",
 									"            \"WorkoutStartTime\": {\"type\": \"string\"},",
-									"            \"id\": {\"type\": \"integer\"},",
+									"            \"id\": {\"type\": \"integer\"}",
 									"            }",
 									"    }]",
 									"}",
