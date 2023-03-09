@@ -207,7 +207,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://{{URL}}:{{Backend_port}}/lift"
+						"url": "http://{{URL}}:{{Backend_port}}/lifts"
 					},
 					"response": []
 				}
