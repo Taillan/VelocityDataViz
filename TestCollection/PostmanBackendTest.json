@@ -74,6 +74,19 @@
 				"url": "http://{{URL}}:{{Backend_port}}/user"
 			},
 			"response": []
+		},
+		{
+			"name": "Del USER",
+			"id": "bada3b1b-a177-41af-8025-5c6701b3ced2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://{{URL}}:{{Backend_port}}/user"
+			},
+			"response": []
 		}
 	]
 }
