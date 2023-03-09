@@ -151,7 +151,7 @@
 									"    pm.response.to.not.have.jsonBody(\"error\");",
 									"});",
 									"",
-									"User = pm.response.json()",
+									"Lift = pm.response.json()",
 									"",
 									"const schema = {",
 									"    \"type\": \"array\",",
@@ -177,7 +177,7 @@
 									"            }",
 									"    }]",
 									"}",
-									"pm.test(\"User well format\", function () {",
+									"pm.test(\"Lift well format\", function () {",
 									"     pm.response.to.have.jsonSchema(schema);",
 									"});",
 									""
