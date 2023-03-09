@@ -35,6 +35,14 @@
 									"    pm.response.to.have.jsonBody();",
 									"    pm.response.to.not.have.jsonBody(\"error\");",
 									"});",
+									"",
+									"User = pm.response.json()",
+									"",
+									"pm.test(\"User well format\", function () {",
+									"    pm.expect(User.email);",
+									"    pm.expect(User.password);",
+									"    pm.expect(User.username);",
+									"});",
 									""
 								],
 								"type": "text/javascript"
@@ -48,7 +56,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{URL}}:{{Backend_port}}/user"
+						"url": "http://{{URL}}:{{Backend_port}}/users"
 					},
 					"response": []
 				},
