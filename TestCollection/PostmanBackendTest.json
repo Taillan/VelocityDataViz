@@ -83,7 +83,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://{{URL}}:{{Backend_port}}/user"
+						"url": "http://{{URL}}:{{Backend_port}}/users"
 					},
 					"response": []
 				}
