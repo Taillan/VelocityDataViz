@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "Post lift",
-			"_postman_id": "0c206a05-c05f-42ca-a037-4a71ccb93d5a",
+			"id": "0c206a05-c05f-42ca-a037-4a71ccb93d5a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -29,7 +29,7 @@
 		},
 		{
 			"name": "Get All Lifts",
-			"_postman_id": "600faf4a-60e8-4768-85e7-4030ba3ea55f",
+			"id": "600faf4a-60e8-4768-85e7-4030ba3ea55f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -42,7 +42,7 @@
 		},
 		{
 			"name": "Get All Users",
-			"_postman_id": "8131b49e-e995-4592-89fd-6e9fa798f2b0",
+			"id": "8131b49e-e995-4592-89fd-6e9fa798f2b0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -55,7 +55,7 @@
 		},
 		{
 			"name": "Add User",
-			"_postman_id": "485460e5-e130-4ccc-8597-00f0cb79e785",
+			"id": "485460e5-e130-4ccc-8597-00f0cb79e785",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
