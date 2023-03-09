@@ -47,7 +47,7 @@
 									"            \"email\": {\"type\": \"string\"},",
 									"            \"id\": {\"type\": \"integer\"},",
 									"            \"password\": {\"type\": \"string\"},",
-									"            \"username\": {\"type\": \"string\"}",
+									"            \"username\": {\"type\": \"int\"}",
 									"            }",
 									"        }",
 									"}",
