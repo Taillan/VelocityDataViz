@@ -59,6 +59,7 @@
 									"});",
 									"",
 									"User = pm.response.json()",
+									"",
 									"const schema = {",
 									"    \"type\": \"array\",",
 									"    \"items\":",
