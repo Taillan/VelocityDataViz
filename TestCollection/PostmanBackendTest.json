@@ -11,6 +11,11 @@
 			"id": "320e8fe2-7019-4101-87e8-74e4d0289fcc"
 		},
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "beb89b14-2be0-45d3-a2b6-f94e8a545888"
+		},
+		{
 			"name": "Post lift",
 			"id": "0c206a05-c05f-42ca-a037-4a71ccb93d5a",
 			"protocolProfileBehavior": {
