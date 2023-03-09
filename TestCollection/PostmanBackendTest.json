@@ -7,96 +7,111 @@
 	"item": [
 		{
 			"name": "User",
-			"item": [],
+			"item": [
+				{
+					"name": "Get All Users",
+					"id": "8131b49e-e995-4592-89fd-6e9fa798f2b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://{{URL}}:{{Backend_port}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"id": "485460e5-e130-4ccc-8597-00f0cb79e785",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"Jumpiste\",\n    \"password\" : \"test\",\n    \"email\" : \"xvdssdv\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://{{URL}}:{{Backend_port}}/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Del user",
+					"id": "bada3b1b-a177-41af-8025-5c6701b3ced2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://{{URL}}:{{Backend_port}}/user"
+					},
+					"response": []
+				}
+			],
 			"id": "320e8fe2-7019-4101-87e8-74e4d0289fcc"
 		},
 		{
 			"name": "Lifts",
-			"item": [],
+			"item": [
+				{
+					"name": "Post lift",
+					"id": "0c206a05-c05f-42ca-a037-4a71ccb93d5a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Exercise\": \"deadlift\",\n    \"Set\": 1,\n    \"Rep\": 1,\n    \"Weight\": \"60\",\n    \"Metric\": \"kgs\",\n    \"RPE\": \"\",\n    \"Tags\": \"warmup,quadruple\",\n    \"WorkoutStartTime\": \"03/03/2023 18:43:16\",\n    \"RestTime\": \"00:00:00\",\n    \"AvgVelocity\": 0.71,\n    \"RoM\": 556,\n    \"PeakVelocity\": 1.33,\n    \"PeakVelocityLocation\": 400,\n    \"DurationOfRep\": 0.778\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://{{URL}}:{{Backend_port}}/lift"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Lifts",
+					"id": "600faf4a-60e8-4768-85e7-4030ba3ea55f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://{{URL}}:{{Backend_port}}/lifts"
+					},
+					"response": []
+				},
+				{
+					"name": "Del user Copy",
+					"id": "a3805570-87ad-4651-b695-6b7084cc9681",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://{{URL}}:{{Backend_port}}/lift"
+					},
+					"response": []
+				}
+			],
 			"id": "beb89b14-2be0-45d3-a2b6-f94e8a545888"
-		},
-		{
-			"name": "Post lift",
-			"id": "0c206a05-c05f-42ca-a037-4a71ccb93d5a",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"Exercise\": \"deadlift\",\n    \"Set\": 1,\n    \"Rep\": 1,\n    \"Weight\": \"60\",\n    \"Metric\": \"kgs\",\n    \"RPE\": \"\",\n    \"Tags\": \"warmup,quadruple\",\n    \"WorkoutStartTime\": \"03/03/2023 18:43:16\",\n    \"RestTime\": \"00:00:00\",\n    \"AvgVelocity\": 0.71,\n    \"RoM\": 556,\n    \"PeakVelocity\": 1.33,\n    \"PeakVelocityLocation\": 400,\n    \"DurationOfRep\": 0.778\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://{{URL}}:{{Backend_port}}/lift"
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Lifts",
-			"id": "600faf4a-60e8-4768-85e7-4030ba3ea55f",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://{{URL}}:{{Backend_port}}/lifts"
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Users",
-			"id": "8131b49e-e995-4592-89fd-6e9fa798f2b0",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://{{URL}}:{{Backend_port}}/users"
-			},
-			"response": []
-		},
-		{
-			"name": "Add User",
-			"id": "485460e5-e130-4ccc-8597-00f0cb79e785",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"username\" : \"Jumpiste\",\n    \"password\" : \"test\",\n    \"email\" : \"xvdssdv\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://{{URL}}:{{Backend_port}}/user"
-			},
-			"response": []
-		},
-		{
-			"name": "Del user",
-			"id": "bada3b1b-a177-41af-8025-5c6701b3ced2",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": "http://{{URL}}:{{Backend_port}}/user"
-			},
-			"response": []
 		}
 	]
 }
