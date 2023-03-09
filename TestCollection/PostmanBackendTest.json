@@ -153,6 +153,7 @@
 									"});",
 									"",
 									"Lift = pm.response.json()",
+									"console.log(type(Lift[0][\"AvgVelocity\"]))",
 									"",
 									"const schema = {",
 									"    \"type\": \"array\",",
