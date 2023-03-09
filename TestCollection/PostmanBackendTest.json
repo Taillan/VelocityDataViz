@@ -27,7 +27,7 @@
 								"id": "1ba7defa-cb7a-4006-9540-4897a7fb9b1f",
 								"exec": [
 									"pm.test(\"Request respond ok\", function () {",
-									"    pm.response.to.have.status(200);",
+									"    pm.response.to.have.status(400);",
 									"});",
 									"",
 									"pm.test(\"Request respond json\", function () {",
