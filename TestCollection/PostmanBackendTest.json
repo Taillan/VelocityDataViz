@@ -199,7 +199,7 @@
 					"response": []
 				},
 				{
-					"name": "Del user Copy",
+					"name": "DELETE All Lifts",
 					"id": "a3805570-87ad-4651-b695-6b7084cc9681",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
