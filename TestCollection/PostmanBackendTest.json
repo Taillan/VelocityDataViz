@@ -45,7 +45,7 @@
 									"        \"Properties\":",
 									"            {",
 									"            \"email\": {\"type\": \"string\"},",
-									"            \"id\": {\"type\": \"stri\"},",
+									"            \"id\": {\"type\": \"integer\"},",
 									"            \"password\": {\"type\": \"string\"},",
 									"            \"username\": {\"type\": \"string\"}",
 									"            }",
