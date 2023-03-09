@@ -24,8 +24,9 @@ def db_connection(instruction):
     try:
         with get_db() as db:
             cursor = db.cursor()
-            cursor.execute(instruction)   
+            cursor.execute(instruction)
             db.commit()
-            return  cursor.fetchall()
+            if(cursor.description != None):
+                return  cursor.fetchall()
     except mariadb.Error as e: 
         print(f"Error db_connection : {e}")

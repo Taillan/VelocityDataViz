@@ -5,7 +5,6 @@ from dao.LiftDAO import *
 
 def NewLiftService(payload):
     Lift = LiftFromJson(payload)
-    print(payload, file=sys.stderr)
     saveLift(Lift)
     return Lift
 
@@ -91,8 +90,9 @@ def LiftFromJson(payload):
         DurationOfRep = float(payload['DurationOfRep'])
     except:
         return "Missing Tags field"
-   
-    return lift(Exercise,Set,Rep,Weight,Metric,rpe,Tags,WorkoutStartTime,RestTime,AvgVelocity,RoM,PeakVelocity,PeakVelocityLocation, DurationOfRep)
+    
+    result =lift(Exercise,Weight,Metric,rpe,Tags,WorkoutStartTime,RestTime,AvgVelocity,PeakVelocity, DurationOfRep,PeakVelocityLocation,RoM,Set,Rep)
+    return result
 
 def LiftFromSQL(payload):
     try:
