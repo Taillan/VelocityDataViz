@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "60db96f3-c050-4926-9d70-10a8f0cd1291",
+		"name": "Data-viz-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post lift",
+			"_postman_id": "0c206a05-c05f-42ca-a037-4a71ccb93d5a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Exercise\": \"deadlift\",\n    \"Set\": 1,\n    \"Rep\": 1,\n    \"Weight\": \"60\",\n    \"Metric\": \"kgs\",\n    \"RPE\": \"\",\n    \"Tags\": \"warmup,quadruple\",\n    \"WorkoutStartTime\": \"03/03/2023 18:43:16\",\n    \"RestTime\": \"00:00:00\",\n    \"AvgVelocity\": 0.71,\n    \"RoM\": 556,\n    \"PeakVelocity\": 1.33,\n    \"PeakVelocityLocation\": 400,\n    \"DurationOfRep\": 0.778\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{URL}}:{{Backend_port}}/lift"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Lifts",
+			"_postman_id": "600faf4a-60e8-4768-85e7-4030ba3ea55f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://{{URL}}:{{Backend_port}}/lifts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"_postman_id": "8131b49e-e995-4592-89fd-6e9fa798f2b0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://{{URL}}:{{Backend_port}}/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"_postman_id": "485460e5-e130-4ccc-8597-00f0cb79e785",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"Jumpiste\",\n    \"password\" : \"test\",\n    \"email\" : \"xvdssdv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{URL}}:{{Backend_port}}/user"
+			},
+			"response": []
+		}
+	]
+}
