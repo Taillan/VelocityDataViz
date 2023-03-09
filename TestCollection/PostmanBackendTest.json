@@ -48,7 +48,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{URL}}:{{Backend_port}}/users"
+						"url": "http://{{URL}}:{{Backend_port}}/user"
 					},
 					"response": []
 				},
