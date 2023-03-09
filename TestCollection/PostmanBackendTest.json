@@ -123,7 +123,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Exercise\": \"deadlift\",\n    \"Set\": 1,\n    \"Rep\": 1,\n    \"Weight\": \"60\",\n    \"Metric\": \"kgs\",\n    \"RPE\": \"\",\n    \"Tags\": \"warmup,quadruple\",\n    \"WorkoutStartTime\": \"03/03/2023 18:43:16\",\n    \"RestTime\": \"00:00:00\",\n    \"AvgVelocity\": 0.71,\n    \"RoM\": 556,\n    \"PeakVelocity\": 1.33,\n    \"PeakVelocityLocation\": 400,\n    \"DurationOfRep\": 0.778\n}",
+							"raw": "{\n    \"Exercise\": \"deadlift\",\n    \"Set\": 2,\n    \"Rep\": 1,\n    \"Weight\": \"60\",\n    \"Metric\": \"kgs\",\n    \"RPE\": \"\",\n    \"Tags\": \"warmup,quadruple\",\n    \"WorkoutStartTime\": \"03/03/2023 18:43:16\",\n    \"RestTime\": \"00:00:00\",\n    \"AvgVelocity\": 0.71,\n    \"RoM\": 556,\n    \"PeakVelocity\": 1.33,\n    \"PeakVelocityLocation\": 400,\n    \"DurationOfRep\": 0.778\n}",
 							"options": {
 								"raw": {
 									"language": "json"
