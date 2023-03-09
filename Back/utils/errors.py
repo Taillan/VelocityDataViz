@@ -6,6 +6,8 @@ BAD_TOKEN_MESSAGE = "Error while parsing token, ensure it's in form : 'Bearer ..
 WRONG_TOKEN_MESSAGE = "Wrong token, please reload it"
 USER_CREATED_MESSAGE = "User successfully created"
 INTERNAL_ERROR_MESSAGE = "Internal error : "
+ALL_USER_DELETED_MESSAGE = "All users successfully deleted"
+ALL_LIFT_DELETED_MESSAGE = "All lifts successfully deleted"
 
 class Error(Exception):
     pass

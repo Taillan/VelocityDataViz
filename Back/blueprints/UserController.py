@@ -13,3 +13,11 @@ def NewUser():
 		return user.toJSON(), 200
 	except ValueError:
 		return INTERNAL_ERROR_MESSAGE + ValueError, 500
+
+@user_blueprint.route('/users', methods=['DELETE'])
+def DelAllUser():
+	try:
+		DeleteAllUsers()
+		return ALL_USER_DELETED_MESSAGE, 204
+	except ValueError:
+		return INTERNAL_ERROR_MESSAGE + ValueError, 500 

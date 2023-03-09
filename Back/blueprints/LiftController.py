@@ -14,3 +14,11 @@ def NewUser():
 		return lift.toJSON(), 200
 	except ValueError:
 		return INTERNAL_ERROR_MESSAGE + ValueError, 500
+
+@lift_blueprint.route('/lifts', methods=['DELETE'])
+def DelAllLift():
+	try:
+		DeleteAllLifts()
+		return ALL_USER_DELETED_MESSAGE, 204
+	except ValueError:
+		return INTERNAL_ERROR_MESSAGE + ValueError, 500 
