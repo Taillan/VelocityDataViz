@@ -38,7 +38,7 @@
 									"",
 									"User = pm.response.json()",
 									"const schema = {",
-									"    \"type\": \"array\",",
+									"    \"type\": \"object\",",
 									"    \"items\":",
 									"        {",
 									"        \"type\": \"object\",",
