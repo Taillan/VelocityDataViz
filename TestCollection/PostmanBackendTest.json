@@ -10,6 +10,37 @@
 			"item": [
 				{
 					"name": "Get All Users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "53cc26c6-c8dd-4a12-82a5-e00b584040ae",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ba7defa-cb7a-4006-9540-4897a7fb9b1f",
+								"exec": [
+									"pm.test(\"Request respond ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Request respond json\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "8131b49e-e995-4592-89fd-6e9fa798f2b0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
