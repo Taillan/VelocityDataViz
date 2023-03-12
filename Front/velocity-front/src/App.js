@@ -1,51 +1,60 @@
 import React, { useState } from "react";
+import { render } from 'react-dom'
+import Papa from "papaparse";
 
 function App() {
-  const [file, setFile] = useState();
-  const [array, setArray] = useState([]);
+  // State to store parsed data
+  const [parsedData, setParsedData] = useState([]);
 
-  const fileReader = new FileReader();
+  //State to store table Column name
+  const [tableRows, setTableRows] = useState([]);
 
-  const handleOnChange = (e) => {
-    setFile(e.target.files[0]);
-  };
+  //State to store the values
+  const [values, setValues] = useState([]);
 
-  const csvFileToArray = string => {
-    
-    let id=0;
-    const csvHeader = string.slice(0, string.indexOf("\n")).split(",");
-    csvHeader.push("id");
-    console.log(csvHeader);
-    const csvRows = string.slice(string.indexOf("\n") + 1).split("\n");
+  const sendData = (e) => {
+    console.log("Send Data");/*
+    // create a new XMLHttpRequest
+    var xhr = new XMLHttpRequest();
 
-    const array = csvRows.map(i => {
-      id++;
-      const values = i.concat(","+id).split(",");
-      values.push(id);
-      const obj = csvHeader.reduce((object, header, index) => {
-        object[header] = values[index];
-        return object;
-      }, {});
-      return obj;
+    // get a callback when the server responds
+    xhr.addEventListener('send', () => {
+      // update the state of the component with the result here
+      console.log(xhr.responseText);
     });
-
-    setArray(array);
-  };
+    // open the request with the verb and the url
+    xhr.open('POST', 'http://127.0.0.1:5000/lift');
+    JSON.stringify(parsedData)
+    // send the request
+    xhr.send();*/
+  }
 
   const handleOnSubmit = (e) => {
-    e.preventDefault();
+    Papa.parse(e.target.files[0], {
+      header: true,
+      skipEmptyLines: true,
+      complete: function (results) {
+        const rowsArray = [];
+        const valuesArray = [];
 
-    if (file) {
-      fileReader.onload = function (event) {
-        const text = event.target.result;
-        csvFileToArray(text);
-      };
+        // Iterating data to get column name and their values
+        results.data.map((d) => {
+          rowsArray.push(Object.keys(d));
+          valuesArray.push(Object.values(d));
+        });
 
-      fileReader.readAsText(file);
-    }
+        // Parsed Data Response in array format
+        setParsedData(results.data);
+        console.log(results.data);
+
+        // Filtered Column Names
+        setTableRows(rowsArray[0]);
+
+        // Filtered Values
+        setValues(valuesArray);
+      },
+    });
   };
-
-  const headerKeys = Object.keys(Object.assign({}, ...array));
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -55,12 +64,12 @@ function App() {
           type={"file"}
           id={"csvFileInput"}
           accept={".csv"}
-          onChange={handleOnChange}
+          onChange={handleOnSubmit}
         />
 
         <button
           onClick={(e) => {
-            handleOnSubmit(e);
+            sendData();
           }}
         >
           IMPORT CSV
@@ -71,21 +80,22 @@ function App() {
 
       <table>
         <thead>
-          <tr key={"header"}>
-            {headerKeys.map((key) => (
-              <th>{key}</th>
-            ))}
+          <tr>
+            {tableRows.map((rows, index) => {
+              return <th key={index}>{rows}</th>;
+            })}
           </tr>
         </thead>
-
         <tbody>
-          {array.map((item) => (
-            <tr key={item.id}>
-              {Object.values(item).map((val) => (
-                <td>{val}</td>
-              ))}
-            </tr>
-          ))}
+          {values.map((value, index) => {
+            return (
+              <tr key={index}>
+                {value.map((val, i) => {
+                  return <td key={i}>{val}</td>;
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
