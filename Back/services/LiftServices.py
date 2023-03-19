@@ -18,7 +18,7 @@ def GetLiftService(position):
     return Lift
 
 def GetAllLiftService():
-    return getAllLift()
+    return AllLiftFromSQL(getAllLift())
 
 def UpdateLiftService(id, payload):
     user = LiftFromJson(payload)
@@ -96,66 +96,70 @@ def LiftFromJson(payload):
 
 def LiftFromSQL(payload):
     try:
-        Exercise = payload[0]
+        id = payload[0]
+    except:
+        return "Missing id field"
+    try:
+        Exercise = payload[1]
     except:
         return "Missing Exercise field"
     try:
-        Set = payload[1]
+        PeakVelocityLocation = payload[2]
+    except:
+        return "Missing PeakVelocityLocation field"
+    try:
+        DurationOfRep = payload[3]
+    except:
+        return "Missing DurationOfRep field"
+    try:
+        Set = payload[4]
     except:
         return "Missing Set field"
     try:
-        Rep = payload[2]
+        Rep = payload[5]
     except:
         return "Missing Rep field"
     try:
-        Weight = payload[3]
+        Weight = payload[6]
     except:
         return "Missing Weight field"
     try:
-        Metric = payload[4]
+        Metric = payload[7]
     except:
         return "Missing Metric field"
     try:
-        rpe = payload[5]
+        rpe = payload[8]
     except:
-        return "Missing RPE field"
+        return "Missing rpe field"
     try:
-        Tags = payload[6]
+        Tags = payload[9]
     except:
         return "Missing Tags field"
     try:
-        WorkoutStartTime = payload[7]
+        WorkoutStartTime = payload[10]
     except:
         return "Missing WorkoutStartTime field"
-    try:
-        RestTime = payload[8]
-    except:
-        return "Missing RestTime field"
-    try:
-        AvgVelocity = payload[9]
-    except:
-        return "Missing AvgVelocity field"
-    try:
-        RoM = payload[10]
-    except:
-        return "Missing RoM field"
     try:
         PeakVelocity = payload[11]
     except:
         return "Missing PeakVelocity field"
     try:
-        PeakVelocityLocation = payload[12]
+        RoM = payload[12]
     except:
-        return "Missing PeakVelocityLocation field"
+        return "Missing RoM field"
     try:
-        DurationOfRep = payload[13]
+        RestTime = payload[13]
     except:
-        return "Missing DurationOfRep field"
+        return "Missing RestTime field"
+    try:
+        AvgVelocity = payload[14]
+    except:
+        return "Missing AvgVelocity field"
     
-    return lift(Exercise,Set,Rep,Weight,Metric,rpe,Tags,WorkoutStartTime,RestTime ,AvgVelocity,RoM,PeakVelocity,PeakVelocityLocation, DurationOfRep)
+    return lift(Exercise,Set,Rep,Weight,Metric,rpe,Tags,WorkoutStartTime,RestTime ,AvgVelocity,RoM,PeakVelocity,PeakVelocityLocation, DurationOfRep,id)
 
 def AllLiftFromSQL(payload):
-    users = []
-    for user in payload:
-        users.append(LiftFromSQL(user))
-    return users
+    lifts = []
+    for lift in payload:
+        lifts.append(LiftFromSQL(lift))
+    return lifts

@@ -17,4 +17,4 @@ class lift():
         self.DurationOfRep = DurationOfRep
     
     def toJSON(self):
-        return {"Exercise": self.Exercise, "Set": self.Set, "Rep":self.Rep, "Weight": self.Weight, "Metric":self.Metric, "RPE": self.RPE, "Tags":self.Tags, "WorkoutStartTime": self.WorkoutStartTime, "RestTime":self.RestTime, "AvgVelocity": self.AvgVelocity, "RoM":self.RoM, "PeakVelocity": self.PeakVelocityLocation, "email":self.PeakVelocityLocation, "DurationOfRep": self.DurationOfRep}
+        return {"id":self.id,"Exercise": self.Exercise, "Set": self.Set, "Rep":self.Rep, "Weight": self.Weight, "Metric":self.Metric, "RPE": self.RPE, "Tags":self.Tags, "WorkoutStartTime": self.WorkoutStartTime, "RestTime":self.RestTime, "AvgVelocity": self.AvgVelocity, "RoM":self.RoM, "PeakVelocity": self.PeakVelocityLocation, "PeakVelocityLocation":self.PeakVelocityLocation, "DurationOfRep": self.DurationOfRep}

@@ -1,4 +1,4 @@
-class User():
+class user():
     def __init__(self, username: str, password: str, email: str, id: int=None):
         self.id = id
         self.username = username
@@ -6,4 +6,4 @@ class User():
         self.email = email
     
     def toJSON(self):
-        return {"username": self.username, "password": self.password, "email":self.email}
+        return {"id":self.id,"username": self.username, "password": self.password, "email":self.email}

@@ -1,4 +1,4 @@
-from models.User import User
+from models.User import user
 from utils.errors import NotFound
 from utils.db_connect import get_cur
 from dao.UserDAO import *
@@ -19,7 +19,7 @@ def GetUserService(position):
     return User
 
 def GetAllUserService():
-    return getAllUser()
+    return AllUserFromSQL(getAllUser())
 
 def UpdateUserService(id, payload):
     user = UserFromJson(payload)
@@ -35,7 +35,6 @@ def DeleteAllUsers():
     deleteAllUser()
 
 def UserFromJson(payload):
-    #print(payload, file=sys.stderr)
     try:
         username = payload['username']
     except:
@@ -48,7 +47,7 @@ def UserFromJson(payload):
         email = payload['email']
     except:
         return "Missing email field"
-    return User(username, password,email)
+    return user(username, password,email)
 
 def UserFromSQL(payload):
     try:
@@ -67,7 +66,7 @@ def UserFromSQL(payload):
         email = payload[3]
     except:
         return "Missing email"
-    return User(username, password,email,id)
+    return user(username, password,email,id)
 
 def AllUserFromSQL(payload):
     users = []
